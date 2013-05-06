@@ -17,6 +17,4 @@ public enum Forma {
 		return this.valor;
 	}
 
-	
-
 }

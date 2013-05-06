@@ -5,9 +5,9 @@ package edu.tallerweb.pptls;
  */
 public class Mano {
 
-	Integer valorForma;
-	String nombreForma;
-	String jugada[][] = new String[5][5];
+	private Integer valorForma;
+	private String nombreForma;
+	private String jugada[][] = new String[5][5];
 
 	/**
 	 * Toda Mano debe crearse con una forma dada, que sera la que determine su
@@ -32,17 +32,20 @@ public class Mano {
 		inicializaMatriz();
 
 		if (this.valorForma == otra.valorForma) {
-			System.out.println(this.nombreForma + " "+ Resultado.EMPATA + " con " + otra.nombreForma);
+			System.out.println(this.nombreForma + " " + Resultado.EMPATA
+					+ " con " + otra.nombreForma);
 			return Resultado.EMPATA;
 		} else {
 
 			if (" ".equals(jugada[this.valorForma][otra.valorForma])) {
-				System.out.println(this.nombreForma + " "+ Resultado.PIERDE
-				                    + " con " + otra.nombreForma);
+				System.out.println(this.nombreForma + " " + Resultado.PIERDE
+						+ " con " + otra.nombreForma);
 				return Resultado.PIERDE;
 			} else {
-				System.out.println(this.nombreForma + " "+ jugada[this.valorForma][otra.valorForma]
-				                    + " a " + otra.nombreForma + "  " + Resultado.GANA + " " + this.nombreForma);
+				System.out.println(this.nombreForma + " "
+						+ jugada[this.valorForma][otra.valorForma] + " a "
+						+ otra.nombreForma + "  " + Resultado.GANA + " "
+						+ this.nombreForma);
 				return Resultado.GANA;
 			}
 		}
