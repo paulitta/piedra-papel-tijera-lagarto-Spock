@@ -7,12 +7,11 @@ public class Mano {
 
 	private Integer valorForma;
 	private String nombreForma;
-	private String jugada[][] = new String[5][5];
+	private String[][] jugada = new String[5][5];
 
 	/**
 	 * Toda Mano debe crearse con una forma dada, que sera la que determine su
 	 * condicion en el juego.
-	 * 
 	 * @param forma
 	 *            , la Forma que adopta la Mano.
 	 */
@@ -23,7 +22,6 @@ public class Mano {
 
 	/**
 	 * Evaluara el resultado de la partida segun las reglas del juego.
-	 * 
 	 * @param otra
 	 *            , la otra Mano.
 	 * @return un Resultado, de acuerdo al estado del juego.
@@ -53,12 +51,11 @@ public class Mano {
 
 	/**
 	 * Este metodo se utiliza para inicializar una matriz.
-	 * 
 	 */
 	public void inicializaMatriz() {
 
-		for (Integer i = 0; i < 5; i++) {
-			for (Integer j = 0; j < 5; j++) {
+		for (Integer i = 0; i <= 4; i++) {
+			for (Integer j = 0; j <= 4; j++) {
 
 				jugada[i][j] = " ";
 			}
