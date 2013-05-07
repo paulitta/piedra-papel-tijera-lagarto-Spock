@@ -7,7 +7,8 @@ public class Mano {
 
 	private Integer valorForma;
 	private String nombreForma;
-	private String[][] jugada = new String[5][5];
+	private final Integer VAL_PARAM = 5;
+	private String[][] jugada = new String[VAL_PARAM][VAL_PARAM];
 
 	/**
 	 * Toda Mano debe crearse con una forma dada, que sera la que determine su
@@ -54,22 +55,22 @@ public class Mano {
 	 */
 	public void inicializaMatriz() {
 
-		for (Integer i = 0; i <= 4; i++) {
-			for (Integer j = 0; j <= 4; j++) {
+		for (Integer i = 0; i < VAL_PARAM; i++) {
+			for (Integer j = 0; j < VAL_PARAM; j++) {
 
 				jugada[i][j] = " ";
 			}
 		}
-		jugada[0][3] = "aplasta";
-		jugada[0][4] = "aplasta";
-		jugada[1][4] = "destroza";
-		jugada[1][0] = "vaporiza";
-		jugada[2][1] = "refuta";
-		jugada[2][0] = "cubre";
-		jugada[3][1] = "envenena";
-		jugada[3][2] = "come";
-		jugada[4][3] = "decapita";
-		jugada[4][2] = "corta";
+		jugada[Forma.PIEDRA.getValor()][Forma.LAGARTO.getValor()] = "aplasta";
+		jugada[Forma.PIEDRA.getValor()][Forma.TIJERA.getValor()] = "aplasta";
+		jugada[Forma.SPOCK.getValor()][Forma.TIJERA.getValor()] = "destroza";
+		jugada[Forma.SPOCK.getValor()][Forma.PIEDRA.getValor()] = "vaporiza";
+		jugada[Forma.PAPEL.getValor()][Forma.SPOCK.getValor()] = "refuta";
+		jugada[Forma.PAPEL.getValor()][Forma.PIEDRA.getValor()] = "cubre";
+		jugada[Forma.LAGARTO.getValor()][Forma.SPOCK.getValor()] = "envenena";
+		jugada[Forma.LAGARTO.getValor()][Forma.PAPEL.getValor()] = "come";
+		jugada[Forma.TIJERA.getValor()][Forma.LAGARTO.getValor()] = "decapita";
+		jugada[Forma.TIJERA.getValor()][Forma.PAPEL.getValor()] = "corta";
 	}
 
 }
