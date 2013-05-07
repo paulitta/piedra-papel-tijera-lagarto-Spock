@@ -7,8 +7,8 @@ public class Mano {
 
 	private Integer valorForma;
 	private String nombreForma;
-	private final Integer VALPARAM = 5;
-	private String[][] jugada = new String[VALPARAM][VALPARAM];
+	private final Integer valParam = 5;
+	private String[][] jugada = new String[valParam][valParam];
 
 	/**
 	 * Toda Mano debe crearse con una forma dada, que sera la que determine su
@@ -55,8 +55,8 @@ public class Mano {
 	 */
 	public void inicializaMatriz() {
 
-		for (Integer i = 0; i < VALPARAM; i++) {
-			for (Integer j = 0; j < VALPARAM; j++) {
+		for (Integer i = 0; i < valParam; i++) {
+			for (Integer j = 0; j < valParam; j++) {
 
 				jugada[i][j] = " ";
 			}
